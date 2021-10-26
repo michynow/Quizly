@@ -1,0 +1,29 @@
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+html{
+  font-size:10px;
+  font-family:'Poppins','sans-serif';
+  font-weight:400;
+
+}
+body{
+  margin:0;
+}
+ul{
+  list-style-type:none;
+}
+a{
+  text-decoration:none;
+  color:white;
+
+}
+.container{
+  max-width:160rem;
+  margin:0 3.5rem;
+}
+#root{
+  min-height:calc(100% - 7rem);
+}

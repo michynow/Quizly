@@ -1,0 +1,23 @@
+@import './variables';
+@import './mixins';
+.sidebar{
+    height:calc(100vh - 80px);
+    background-color:$theme-color-4;
+    @include flex-column;
+    max-width:20%;
+    &__list{
+        @include flex-column;
+    }
+    &__item{
+        border-bottom:1px solid $theme-color-1;
+        transition:0.3s all ease;
+        &:hover{
+            background-color:$theme-color-1;
+        }
+    }
+    &__link{
+        font-size:1.5rem;
+        display:block;
+        padding:1rem 2.5rem;
+    }
+}
