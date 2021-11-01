@@ -1,6 +1,4 @@
-import React from 'react'
-
-export default function InvitePage() {
+export default function InvitePage():JSX.Element {
     return (
         <div>
             

@@ -1,6 +1,11 @@
 import logo from '../../../images/quiz.png';
 import { NavLink } from 'react-router-dom';
-export default function Topbar() {
+import HamburgerBtn from './HamburgerBtn';
+interface Props{
+  sidebarOpen:Boolean,
+  setSidebarOpen:Function,
+}
+export default function Topbar({sidebarOpen,setSidebarOpen}:Props):JSX.Element {
   return (
     <header className="topbar">
       <NavLink to="/" exact>
@@ -9,6 +14,7 @@ export default function Topbar() {
           <span className="topbar__logo-caption">Quizly</span>
         </div>
       </NavLink>
+      <HamburgerBtn sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen}/>
     </header>
   );
 }

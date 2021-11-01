@@ -1,14 +1,11 @@
 
 interface Props{
-    name?:string,
-    link?:string,
-    data?:string,
+    purpose:string,
     children:JSX.Element,
-    
 }
-export default function SidebarItem({name,link,data,children}:Props) {
+export default function SidebarItem({purpose,children}:Props):JSX.Element {
     return (
-        <li className="sidebar__item">
+        <li className="sidebar__item" data-purpose={purpose}>
             {children}
         </li>
     )

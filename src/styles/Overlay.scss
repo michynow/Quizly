@@ -1,0 +1,11 @@
+.overlay{
+    @include position(fixed,0,0,0,0);
+    width:100%;
+    height:calc(100%);
+    z-index:10;
+    background-color:rgba(0,0,0,0);
+    transition:0.2s all $sidebar-transition;
+}
+.--ready{
+    background-color:rgba(0,0,0,0.25);
+}

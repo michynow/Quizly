@@ -1,7 +1,6 @@
-export default function FindQuizPage() {
+export default function FindQuizPage():JSX.Element {
     return (
         <div>
-            <h3>DUpa</h3>This is the Find quiz Page
         </div>
     )
 }

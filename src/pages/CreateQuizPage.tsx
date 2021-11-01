@@ -1,4 +1,4 @@
-export default function CreateQuizPage() {
+export default function CreateQuizPage():JSX.Element {
     return (
         <div>
             
