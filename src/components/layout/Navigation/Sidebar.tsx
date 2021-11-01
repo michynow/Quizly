@@ -1,14 +1,40 @@
+import SidebarItem from "./SidebarItem";
+import { NavLink } from "react-router-dom";
+
 export default function Sidebar() {
     return (
-        <nav className="sidebar">
-            <ul className="sidebar__list">
-            <li className="sidebar__item"><a href="" className="sidebar__link">This is a link 1</a></li>
-            <li className="sidebar__item"><a href="" className="sidebar__link">This is a link 2</a></li>
-            <li className="sidebar__item"><a href="" className="sidebar__link">This is a link 3</a></li>
-            <li className="sidebar__item"><a href="" className="sidebar__link">This is a link 4</a></li>
-            <li className="sidebar__item"><a href="" className="sidebar__link">This is a link 5</a></li>
-            <li className="sidebar__item"><a href="" className="sidebar__link">This is a link 6</a></li>
-            </ul>
-        </nav>
-    )
+      <nav className="sidebar">
+        <ul className="sidebar__list">
+          <SidebarItem>
+            <NavLink to="/" exact className="sidebar__link">
+              Dashboard
+            </NavLink>
+          </SidebarItem>
+          <SidebarItem>
+            <NavLink
+              to="/create-quiz"
+              exact
+              className="sidebar__link"
+            >
+              Create a new quiz
+            </NavLink>
+          </SidebarItem>
+          <SidebarItem>
+            <NavLink to="/find-quiz" exact className="sidebar__link">
+              Find a new quiz
+            </NavLink>
+          </SidebarItem>
+          <SidebarItem>
+            <NavLink to="/hiscores" exact className="sidebar__link">
+              Hiscores
+            </NavLink>
+          </SidebarItem>
+          <SidebarItem>
+            <NavLink to="/contact" exact className="sidebar__link">
+              Contact
+            </NavLink>
+          </SidebarItem>
+        </ul>
+      </nav>
+    );
 }

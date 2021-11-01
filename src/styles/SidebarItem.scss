@@ -1,0 +1,17 @@
+@import './mixins';
+@import './variables';
+.sidebar{
+       &__item{
+        border-bottom:1px solid $theme-color-4-hover;
+        transition:0.3s all ease;
+        &:hover{
+            background-color:$theme-color-4-hover;
+
+        }
+    }
+    &__link{
+        font-size:1.5rem;
+        display:block;
+        padding:2rem 2.5rem;
+    }
+}
