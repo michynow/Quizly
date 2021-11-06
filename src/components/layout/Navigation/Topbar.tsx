@@ -1,6 +1,6 @@
 import logo from '../../../images/quiz.png';
 import { NavLink } from 'react-router-dom';
-import HamburgerBtn from './HamburgerBtn';
+import HamburgerBtn from './Hamburger';
 interface Props{
   sidebarOpen:Boolean,
   setSidebarOpen:Function,

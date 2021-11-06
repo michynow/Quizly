@@ -1,3 +1,4 @@
+import { SidebarListItem } from "./styles/SidebarListItem";
 
 interface Props{
     purpose:string,
@@ -5,8 +6,6 @@ interface Props{
 }
 export default function SidebarItem({purpose,children}:Props):JSX.Element {
     return (
-        <li className="sidebar__item" data-purpose={purpose}>
-            {children}
-        </li>
+        <SidebarListItem data-purpose={purpose}>{children}</SidebarListItem>
     )
 }

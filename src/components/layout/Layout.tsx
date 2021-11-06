@@ -7,7 +7,7 @@ export default function Layout(props: SwitchProps):JSX.Element {
 const [sidebarOpen, setSidebarOpen] = useState<Boolean>(true);
 let windowWidth:number = window.innerWidth;
 function checkViewport():void{
-windowWidth < 979 ? setSidebarOpen(false) : setSidebarOpen(true);
+windowWidth > 979 ? setSidebarOpen(false) : setSidebarOpen(false);
 }
 useEffect(checkViewport,[])
     return (

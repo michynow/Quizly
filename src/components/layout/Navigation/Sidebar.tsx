@@ -1,119 +1,116 @@
 import SidebarItem from "./SidebarItem";
 import { NavLink } from "react-router-dom";
-
+import styled from 'styled-components';
+import { SidebarNav } from "./styles/SidebarNav";
+import { SidebarList } from "./styles/SidebarList";
+import { SidebarListItemicon } from "./styles/SidebarListItemIcon";
 interface Props {
   sidebarOpen:Boolean,
   setSidebarOpen: Function,
 }
+const StyledNavLink = styled(NavLink)`
+  font-size: 1.5rem;
+  display: flex;
+  padding: 2rem 1.5rem;
+  white-space: nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+`;
 export default function Sidebar({sidebarOpen,setSidebarOpen}:Props):JSX.Element {
   function handleSidebarClose ():void  {
     if(sidebarOpen){setSidebarOpen(false)}
   }
   return (
-    <nav
-      className={sidebarOpen ? "sidebar --open" : "sidebar --hidden"}
-    >
-      <ul className="sidebar__list">
+    <SidebarNav open={sidebarOpen}>
+      <SidebarList>
         <SidebarItem purpose="dashboard">
-          <NavLink
-            onClick={handleSidebarClose}
-            to="/"
-            exact
-            className="sidebar__link"
-          >
-            <i className="icon-dashboard"></i>
+          <StyledNavLink onClick={handleSidebarClose} to="/" exact>
+            <SidebarListItemicon className="icon-dashboard" />
             Dashboard
-          </NavLink>
+          </StyledNavLink>
         </SidebarItem>
         <SidebarItem purpose="new-quiz">
-          <NavLink
+          <StyledNavLink
             onClick={handleSidebarClose}
             to="/create-quiz"
             exact
-            className="sidebar__link"
           >
-            <i className="icon-new-quiz"></i>
+            <SidebarListItemicon className="icon-new-quiz" />
             New quiz
-          </NavLink>
+          </StyledNavLink>
         </SidebarItem>
         <SidebarItem purpose="your-quizes">
-          <NavLink
+          <StyledNavLink
             onClick={handleSidebarClose}
             to="/your-quizes"
             exact
-            className="sidebar__link"
           >
-            <i className="icon-your-quizes"></i>
+            <SidebarListItemicon className="icon-your-quizes" />
             Your quizes
-          </NavLink>
+          </StyledNavLink>
         </SidebarItem>
         <SidebarItem purpose="find-new">
-          <NavLink
+          <StyledNavLink
             onClick={handleSidebarClose}
             to="/find-quiz"
             exact
-            className="sidebar__link"
           >
-            <i className="icon-find-new"></i>
+            <SidebarListItemicon className="icon-find-new" />
             Find quizes
-          </NavLink>
+          </StyledNavLink>
         </SidebarItem>
         <SidebarItem purpose="hiscores">
-          <NavLink
+          <StyledNavLink
             onClick={handleSidebarClose}
             to="/hiscores"
             exact
-            className="sidebar__link"
           >
-            <i className="icon-hiscores"></i>
+            <SidebarListItemicon className="icon-hiscores" />
             Hiscores
-          </NavLink>
+          </StyledNavLink>
         </SidebarItem>
         <SidebarItem purpose="invite">
-          <NavLink
+          <StyledNavLink
             onClick={handleSidebarClose}
             to="/invite-page"
             exact
-            className="sidebar__link"
           >
-            <i className="icon-invite"></i>
+            <SidebarListItemicon className="icon-invite" />
             Invite a friend
-          </NavLink>
+          </StyledNavLink>
         </SidebarItem>
         <SidebarItem purpose="your-account">
-          <NavLink
+          <StyledNavLink
             onClick={handleSidebarClose}
             to="/your-account"
             exact
-            className="sidebar__link"
           >
-            <i className="icon-your-account"></i>
+            <SidebarListItemicon className="icon-your-account" />
             Your Account
-          </NavLink>
+          </StyledNavLink>
         </SidebarItem>
         <SidebarItem purpose="contact">
-          <NavLink
+          <StyledNavLink
             onClick={handleSidebarClose}
             to="/contact"
             exact
-            className="sidebar__link"
           >
-            <i className="icon-contact"></i>
+            <SidebarListItemicon className="icon-contact" />
             Contact
-          </NavLink>
+          </StyledNavLink>
         </SidebarItem>
         <SidebarItem purpose="logout">
-          <NavLink
+          <StyledNavLink
             onClick={handleSidebarClose}
             to="/logout"
             exact
-            className="sidebar__link"
           >
-            <i className="icon-logout"></i>
+            <SidebarListItemicon className="icon-logout" />
             Logout
-          </NavLink>
+          </StyledNavLink>
         </SidebarItem>
-      </ul>
-    </nav>
+      </SidebarList>
+    </SidebarNav>
   );
 }

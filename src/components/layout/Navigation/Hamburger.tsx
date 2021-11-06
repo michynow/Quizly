@@ -1,3 +1,5 @@
+import {HamburgerButton} from './styles/HamburgerButton';
+import { HamburgerButtonSpan } from './styles/HamburgerButtonSpan';
 interface Props {
     sidebarOpen:Boolean,
     setSidebarOpen: Function,
@@ -7,10 +9,10 @@ const HamburgerBtn = ({sidebarOpen,setSidebarOpen}:Props):JSX.Element => {
         setSidebarOpen(!sidebarOpen);
     }
     return (
-        <button onClick={sidebarHandler} className={sidebarOpen ? "topbar__menu-open sidebar-open" : 'topbar__menu-open'}>
-            <span className="topbar__menu-open-btn"></span>
-        </button>
-    )
+      <HamburgerButton onClick={sidebarHandler}>
+          <HamburgerButtonSpan isOpen={sidebarOpen}/>
+      </HamburgerButton>
+    );
 }
 
 export default HamburgerBtn
