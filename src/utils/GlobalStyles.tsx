@@ -1,4 +1,8 @@
-@import "./styles/variables";
+import { createGlobalStyle } from 'styled-components';
+interface Props{
+    theme:any,
+}
+export const GlobalStyles = createGlobalStyle`
 * {
   box-sizing: border-box;
   margin: 0;
@@ -11,18 +15,15 @@ html {
 }
 body {
   margin: 0;
-  overflow-x: hidden;
-  background-color: $theme-color-5;
-}
-.logged-in {
-  overflow: hidden;
+  overflow:hidden;
+  background-color: ${({ theme }: Props) => theme.themeColor5};
 }
 ul {
   list-style-type: none;
 }
 a {
   text-decoration: none;
-  color: $theme-color-5;
+  color: ${({ theme }: Props) => theme.themeColor5};
 }
 button {
   outline: none;
@@ -35,3 +36,4 @@ button {
 #root {
   min-height: calc(100% - 7rem);
 }
+`;
