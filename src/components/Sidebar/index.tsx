@@ -1,12 +1,13 @@
 import SidebarItem from "./SidebarItem";
 import { NavLink } from "react-router-dom";
 import styled from 'styled-components';
-import { SidebarNav } from "./styles/SidebarNav";
-import { SidebarList } from "./styles/SidebarList";
-import { SidebarListItemicon } from "./styles/SidebarListItemIcon";
+import { SidebarNav } from "./SidebarNav";
+import { SidebarList } from "./SidebarList";
+import { SidebarListItemicon } from "./SidebarListItemIcon";
+import {useDispatch} from 'react-redux';
+import {closeSidebar} from '../../actions';
 interface Props {
   sidebarOpen:Boolean,
-  setSidebarOpen: Function,
 }
 const StyledNavLink = styled(NavLink)`
   font-size: 1.5rem;
@@ -17,9 +18,13 @@ const StyledNavLink = styled(NavLink)`
   justify-content: flex-start;
   width: 100%;
 `;
-export default function Sidebar({sidebarOpen,setSidebarOpen}:Props):JSX.Element {
+export default function Sidebar({sidebarOpen}:Props):JSX.Element {
+    const dispatch = useDispatch();
   function handleSidebarClose ():void  {
-    if(sidebarOpen){setSidebarOpen(false)}
+    if(!sidebarOpen) return 
+    else {
+      dispatch(closeSidebar());
+    }
   }
   return (
     <SidebarNav open={sidebarOpen}>

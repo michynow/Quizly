@@ -1,4 +1,4 @@
-import { SidebarListItem } from "./styles/SidebarListItem";
+import { SidebarListItem } from "./SidebarListItem";
 
 interface Props{
     purpose:string,
