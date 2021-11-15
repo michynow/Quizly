@@ -15,7 +15,6 @@ html {
 }
 body {
   margin: 0;
-  overflow:hidden;
   background-color: ${({ theme }: Props) => theme.themeColor5};
 }
 ul {
@@ -35,5 +34,12 @@ button {
 }
 #root {
   min-height: calc(100% - 7rem);
+}
+input::placeholder{
+  font-family:"Poppins", "sans-serif";
+  font-size:1.4rem;
+}
+input:focus{
+  outline:none;
 }
 `;
