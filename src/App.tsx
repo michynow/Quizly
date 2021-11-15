@@ -7,6 +7,7 @@ import InvitePage from "./pages/InvitePage";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./utils/GlobalStyles";
 import DashboardPage from "./pages/DashboardPage";
+import { AnimatePresence } from "framer-motion";
 const theme = {
   themeColor1: "#5fad56;",
   themeColor2: "#f2c14e;",
@@ -14,8 +15,10 @@ const theme = {
   themeColor4: "#4d9078;",
   themeColor4Hover: "#367356;",
   themeColor5: "#e6ebe0;",
+  inputBorderRadius:'5px',
+  inputBorderColor:'#ccc',
   accentRed: "#F44336;",
-  fontColorDark: "#707070;",
+  fontColorDark: "#252424;",
   buttonTransition: "cubic-bezier(1,.61,.26,.83);",
   widthTablet: "979px",
   widthMobile: "525px;",
@@ -28,20 +31,22 @@ function App() {
       <ThemeProvider theme={theme}>
         <GlobalStyles />
         <Layout>
-          <Switch>
-            <Route path="/" exact>
-              <DashboardPage />
-            </Route>
-            <Route path="/create-quiz">
-              <CreateQuizPage />
-            </Route>
-            <Route path="/find-quiz">
-              <FindQuizPage />
-            </Route>
-            <Route path="/invite">
-              <InvitePage />
-            </Route>
-          </Switch>
+          <AnimatePresence exitBeforeEnter={true}>
+            <Switch>
+              <Route path="/" exact>
+                <DashboardPage />
+              </Route>
+              <Route path="/create-quiz">
+                <CreateQuizPage />
+              </Route>
+              <Route path="/find-quiz">
+                <FindQuizPage />
+              </Route>
+              <Route path="/invite">
+                <InvitePage />
+              </Route>
+            </Switch>
+          </AnimatePresence>
         </Layout>
       </ThemeProvider>
     </>

@@ -5,17 +5,19 @@ interface Props {
 }
 export const SidebarNav = styled.nav`
   height: 100vh;
+  position: fixed;
   left: 0;
   background-color: ${({ theme }: Props) => theme.themeColor4};
   display: flex;
   flex-direction: column;
   max-width: 20%;
   width: 20%;
-  min-width: 250px;
+  min-width: 200px;
+  margin-top: 7rem;
   @media (max-width: ${({ theme }: Props) => theme.widthTablet}) {
     transition: 0.5s all
       ${({ theme }: Props) => theme.sidebarTransition};
-    position: absolute;
+    position: fixed;
     left: 0;
     ${({ open }: Props) =>
       open

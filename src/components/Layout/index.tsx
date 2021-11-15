@@ -11,7 +11,7 @@ export default function Layout(props: SwitchProps): JSX.Element {
   const isSidebarOpen = useSelector<RootState, Boolean>(
     (state) => state.isSidebarOpen
   );
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   window.addEventListener('resize',function(){
     dispatch(closeSidebar());
   })
