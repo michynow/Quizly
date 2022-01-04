@@ -1,5 +1,4 @@
-import { SidebarListItem } from "./SidebarListItem";
-
+import { SidebarListItem } from './SidebarItem.style';
 interface Props{
     purpose:string,
     children:JSX.Element,

@@ -5,7 +5,7 @@ interface Props {
 }
 export const HamburgerButtonSpan = styled.span`
   width: 2.5rem;
-  background-color: ${(props:Props) => props.isOpen ? 'transparent' : props.theme.themeColor5};
+  background-color: ${(props:Props) => props.isOpen ? 'transparent' : props.theme.fontColorLight};
   border: none;
   height: 0.2rem;
   position: relative;
@@ -17,7 +17,7 @@ export const HamburgerButtonSpan = styled.span`
     top: 50%;
     left:0;
     content: "";
-    background-color: ${(props:Props) => props.theme.themeColor5};
+    background-color: ${(props:Props) => props.theme.fontColorLight};
     width: 100%;
     height: 0.2rem;
     border-radius: 1rem;

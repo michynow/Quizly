@@ -1,7 +1,14 @@
 import { motion } from "framer-motion";
-import { PageHeadingMain } from "../../components/shared/PageHeadingMain";
-import { PageWrapper } from "../../components/shared/PageWrapper";
+import {
+  PageWrapper,
+  PageHeadingMain,
+} from "../../components/shared/PageWrapper";
+import { useEffect, useRef } from "react";
 export default function FindQuizPage(): JSX.Element {
+  const focusRef = useRef<HTMLHeadingElement>(null);
+  useEffect(()=> {
+    focusRef?.current?.focus();
+  })
   return (
     <motion.div
       initial={{
@@ -13,10 +20,10 @@ export default function FindQuizPage(): JSX.Element {
       exit={{
         opacity: 0,
       }}
-      transition={{ duration: 0.5, delay: 0.1, type: "tween" }}
+      transition={{ duration: 0.3, delay: 0.1, type: "tween" }}
     >
       <PageWrapper>
-        <PageHeadingMain>FindQuiz</PageHeadingMain>
+        <PageHeadingMain ref={focusRef} tabIndex={-1}>FindQuiz</PageHeadingMain>
       </PageWrapper>
     </motion.div>
   );

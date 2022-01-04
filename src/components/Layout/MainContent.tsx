@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 interface Props {
-    theme:any,
+  theme: any;
 }
 export const MainContent = styled.main`
   max-width: 80%;
