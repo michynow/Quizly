@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import type { RootState } from "../../../reducers";
 import { HamburgerButton } from "./HamburgerButton";
 import { HamburgerButtonSpan } from "./HamburgerButtonSpan";
-import { openSidebar, closeSidebar } from "../../../actions";
+import { openSidebarAction, closeSidebarAction } from "../../../actions";
 
 const HamburgerBtn = (): JSX.Element => {
   const isSidebarOpen = useSelector<RootState>(
@@ -11,7 +11,7 @@ const HamburgerBtn = (): JSX.Element => {
  
   const dispatch = useDispatch();
   const sidebarHandler = (): void => {
-      isSidebarOpen ? dispatch(closeSidebar()) : dispatch(openSidebar());
+      isSidebarOpen ? dispatch(closeSidebarAction()) : dispatch(openSidebarAction());
   };
   return (
     <HamburgerButton onClick={sidebarHandler}>

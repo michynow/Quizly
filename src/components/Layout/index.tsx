@@ -5,16 +5,23 @@ import Overlay from "../Overlay";
 import { UnderTopbarWrapper } from "./UnderTopbarWrapper";
 import { MainContent } from "./MainContent";
 import type { RootState } from "../../reducers";
-import { closeSidebar } from "../../actions";
+import { closeSidebarAction } from "../../actions";
 import { useSelector, useDispatch } from "react-redux";
+import { useCallback, useEffect } from "react";
 export default function Layout(props: SwitchProps): JSX.Element {
   const isSidebarOpen = useSelector<RootState, Boolean>(
     (state) => state.isSidebarOpen
   );
-  const dispatch = useDispatch();
-  window.addEventListener('resize',function(){
-    dispatch(closeSidebar());
-  })
+  const useCloseSidebarOnResize = () => {
+    const dispatch = useDispatch();
+    const closeSidebar = useCallback(() => {
+      dispatch(closeSidebarAction());
+    }, [dispatch]);
+    useEffect(() => {
+      window.addEventListener("resize", closeSidebar);
+    }, [closeSidebar]);
+  };
+  useCloseSidebarOnResize();
   return (
     <>
       <Topbar />

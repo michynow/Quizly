@@ -1,9 +1,9 @@
-export const openSidebar = () => {
+export const openSidebarAction = () => {
     return {
         type: "OPEN",
     }
 }
-export const closeSidebar = () => {
+export const closeSidebarAction = () => {
     return {
         type: "CLOSED",
     }

@@ -1,18 +1,9 @@
-import { motion, AnimatePresence } from "framer-motion";
-import styled from 'styled-components';
+import { AnimatePresence } from "framer-motion";
+import {OverlayStyled} from './Overlay.style';
 interface Props {
   isVisible?: Boolean,
 }
-const OverlayStyled = styled(motion.div)`
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: calc(100%);
-    z-index: 10;
-  `;
+
 const Overlay: React.FC<Props> = ({ isVisible }) => {
   
   return (

@@ -1,13 +1,13 @@
 import SidebarItem from "./SidebarItem";
 import { NavLink } from "react-router-dom";
-import styled from 'styled-components';
-import { SidebarNav } from "./SidebarNav";
-import { SidebarList } from "./SidebarList";
-import { SidebarListItemicon } from "./SidebarListItemIcon";
-import {useDispatch} from 'react-redux';
-import {closeSidebar} from '../../actions';
+import styled from "styled-components";
+import { SidebarListItemIcon } from "./SidebarItem.style";
+import { SidebarList, SidebarNav } from "./Sidebar.style";
+import { useDispatch } from "react-redux";
+import { closeSidebarAction } from "../../actions";
+import Routes from "../../utils/Routes";
 interface Props {
-  sidebarOpen:Boolean,
+  sidebarOpen: Boolean;
 }
 const StyledNavLink = styled(NavLink)`
   font-size: 1.5rem;
@@ -18,100 +18,109 @@ const StyledNavLink = styled(NavLink)`
   justify-content: flex-start;
   width: 100%;
 `;
-export default function Sidebar({sidebarOpen}:Props):JSX.Element {
-    const dispatch = useDispatch();
-  function handleSidebarClose ():void  {
-    if(!sidebarOpen) return 
-    else {
-      dispatch(closeSidebar());
+export default function Sidebar({ sidebarOpen }: Props): JSX.Element {
+  const dispatch = useDispatch();
+  function handleSidebarClose(): void {
+    if (sidebarOpen) {
+      dispatch(closeSidebarAction());
     }
   }
+  const {
+    CREATE_QUIZ,
+    YOUR_QUIZES,
+    FIND_QUIZ,
+    HISCORES,
+    CONTACT,
+    YOUR_ACCOUNT,
+    INVITE,
+    LOGOUT,
+  } = Routes;
   return (
     <SidebarNav open={sidebarOpen}>
       <SidebarList>
         <SidebarItem purpose="dashboard">
           <StyledNavLink onClick={handleSidebarClose} to="/" exact>
-            <SidebarListItemicon className="icon-dashboard" />
+            <SidebarListItemIcon className="icon-dashboard" />
             Dashboard
           </StyledNavLink>
         </SidebarItem>
         <SidebarItem purpose="new-quiz">
           <StyledNavLink
             onClick={handleSidebarClose}
-            to="/create-quiz"
+            to={CREATE_QUIZ}
             exact
           >
-            <SidebarListItemicon className="icon-new-quiz" />
+            <SidebarListItemIcon className="icon-new-quiz" />
             New quiz
           </StyledNavLink>
         </SidebarItem>
         <SidebarItem purpose="your-quizes">
           <StyledNavLink
             onClick={handleSidebarClose}
-            to="/your-quizes"
+            to={YOUR_QUIZES}
             exact
           >
-            <SidebarListItemicon className="icon-your-quizes" />
+            <SidebarListItemIcon className="icon-your-quizes" />
             Your quizes
           </StyledNavLink>
         </SidebarItem>
         <SidebarItem purpose="find-new">
           <StyledNavLink
             onClick={handleSidebarClose}
-            to="/find-quiz"
+            to={FIND_QUIZ}
             exact
           >
-            <SidebarListItemicon className="icon-find-new" />
+            <SidebarListItemIcon className="icon-find-new" />
             Find quizes
           </StyledNavLink>
         </SidebarItem>
         <SidebarItem purpose="hiscores">
           <StyledNavLink
             onClick={handleSidebarClose}
-            to="/hiscores"
+            to={HISCORES}
             exact
           >
-            <SidebarListItemicon className="icon-hiscores" />
+            <SidebarListItemIcon className="icon-hiscores" />
             Hiscores
           </StyledNavLink>
         </SidebarItem>
         <SidebarItem purpose="invite">
           <StyledNavLink
             onClick={handleSidebarClose}
-            to="/invite-page"
+            to={INVITE}
             exact
           >
-            <SidebarListItemicon className="icon-invite" />
+            <SidebarListItemIcon className="icon-invite" />
             Invite a friend
           </StyledNavLink>
         </SidebarItem>
         <SidebarItem purpose="your-account">
           <StyledNavLink
             onClick={handleSidebarClose}
-            to="/your-account"
+            to={YOUR_ACCOUNT}
             exact
           >
-            <SidebarListItemicon className="icon-your-account" />
+            <SidebarListItemIcon className="icon-your-account" />
             Your Account
           </StyledNavLink>
         </SidebarItem>
         <SidebarItem purpose="contact">
           <StyledNavLink
             onClick={handleSidebarClose}
-            to="/contact"
+            to={CONTACT}
             exact
           >
-            <SidebarListItemicon className="icon-contact" />
+            <SidebarListItemIcon className="icon-contact" />
             Contact
           </StyledNavLink>
         </SidebarItem>
         <SidebarItem purpose="logout">
           <StyledNavLink
             onClick={handleSidebarClose}
-            to="/logout"
+            to={LOGOUT}
             exact
           >
-            <SidebarListItemicon className="icon-logout" />
+            <SidebarListItemIcon className="icon-logout" />
             Logout
           </StyledNavLink>
         </SidebarItem>

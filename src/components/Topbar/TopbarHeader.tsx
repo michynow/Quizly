@@ -6,7 +6,7 @@ export const TopbarHeader = styled.header`
   z-index: 20;
   width: 100%;
   position: fixed;
-  background-color: ${({theme}:Props)=>theme.themeColor1};
+  background-color: ${({theme}:Props)=>theme.primaryColor};
   padding: 1rem 3.5rem;
   height: 7rem;
   display:flex;

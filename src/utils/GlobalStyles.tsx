@@ -1,6 +1,6 @@
-import { createGlobalStyle } from 'styled-components';
-interface Props{
-    theme:any,
+import { createGlobalStyle } from "styled-components";
+interface Props {
+  theme: any;
 }
 export const GlobalStyles = createGlobalStyle`
 * {
@@ -13,20 +13,33 @@ html {
   font-family: "Poppins", "sans-serif";
   font-weight: 400;
 }
+
 body {
   margin: 0;
-  background-color: ${({ theme }: Props) => theme.themeColor5};
+  background-color: ${({ theme }: Props) => theme.fontColorLight};
 }
 ul {
   list-style-type: none;
 }
 a {
   text-decoration: none;
-  color: ${({ theme }: Props) => theme.themeColor5};
+  color: ${({ theme }: Props) => theme.fontColorLight};
 }
 button {
   outline: none;
   border: none;
+  color:white;
+  font-size:1.75rem;
+  font-weight:bold;
+  max-width:15rem;
+  border-radius:3px;
+  padding:1rem 1.5rem;
+  white-space:nowrap;
+  cursor:pointer;
+  position:relative;
+  &:focus{
+    outline: 5px auto rgba(0, 150, 255, 1);
+  }
 }
 .container {
   max-width: 160rem;
@@ -35,11 +48,12 @@ button {
 #root {
   min-height: calc(100% - 7rem);
 }
-input::placeholder{
+textarea,textarea::placeholder,input::placeholder{
   font-family:"Poppins", "sans-serif";
   font-size:1.4rem;
+  resize:none;
 }
-input:focus{
+textarea:focus,input:focus{
   outline:none;
 }
 `;
